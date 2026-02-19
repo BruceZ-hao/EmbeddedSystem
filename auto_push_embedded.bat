@@ -1,5 +1,6 @@
 @echo off
-chcp 65001 >nul 2>&1  
+:: 替换原有chcp命令
+chcp 936 >nul 2>&1  :: 改用GBK编码适配Windows cmd中文显示
 title 嵌入式项目-新增文件夹+大文件自动化推送脚本
 
 :: ========== 核心配置项（重点：新增文件夹配置） ==========
@@ -7,7 +8,7 @@ set "REPO_DIR=C:\EmbeddedSystem"       :: 仓库根目录
 set "BRANCH=main"                      :: 推送分支
 set "PROXY_IP=127.0.0.1"               :: 代理IP
 set "PROXY_PORT=7897"                  :: 代理端口
-set "LFS_EXT_LIST=bin hex img iso zip" :: LFS追踪的文件后缀
+set "LFS_EXT_LIST=bin hex img iso zip rar" :: LFS追踪的文件后缀
 set "NEW_DIR=SomeTools"                 :: 新增的大文件文件夹名
 set "COMMIT_MSG=Auto push: 新增%NEW_DIR%文件夹+大固件 %date% %time%"
 
